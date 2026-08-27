@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Target framework, nullability, analysis level and warnings-as-errors all
+    come from Directory.Build.props. Only what is specific to this project
+    belongs here.
+  -->
+
+  <PropertyGroup>
+    <RootNamespace>Xmip.Template</RootNamespace>
+    <AssemblyName>Xmip.Template</AssemblyName>
+  </PropertyGroup>
+
+  <!--
+    Uncomment when this project crosses the C ABI in xmip-core-abi.
+    <PropertyGroup>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+  -->
+
+</Project>

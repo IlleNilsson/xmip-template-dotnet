@@ -1,0 +1,64 @@
+# .NET build output
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+
+# Keep the lock file committed. A restore that resolves differently on two
+# machines is the class of problem this repository has no interest in owning.
+# Do not add packages.lock.json here.
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Native modules loaded over the C ABI, when built beside the surface
+*.dll
+*.so
+*.dylib
+*.pdb
+!**/bin/**/*.dll
+
+# Test and coverage output
+[Tt]est[Rr]esult*/
+coverage*.json
+coverage*.xml
+*.coverage
+
+# Local runtime data and embedded databases
+data/
+**/data/
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+
+# Local inbound/outbound test folders
+/inbound/
+/outbound/
+tmp/
+temp/
+
+# Environment and local settings
+.env
+.env.*
+*.local
+
+# Editors and IDEs
+.vs/
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
