@@ -19,6 +19,12 @@
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <AnalysisLevel>latest-recommended</AnalysisLevel>
 
+    <!-- Required by EnforceCodeStyleInBuild: IDE0005, unnecessary usings, only
+         runs when the documentation file is generated. Wanted regardless — a
+         public surface without documentation is one CS1591 away from being
+         told so, and that is the point. -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
     <!-- NETSDK1057 says .NET 11 is a preview. Known and chosen; ADR-0021
          keeps Xmip on current platforms. Left as a warning rather than
          suppressed, so it stops being ignorable when 11 goes stable. -->
