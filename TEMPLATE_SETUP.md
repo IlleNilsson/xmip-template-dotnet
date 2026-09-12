@@ -20,7 +20,7 @@ own.
 4. Replace the template title and instructions in `README.md`.
 5. Complete `ARCHITECTURE.md`: classification, maturity, owning capability,
    responsibility, public contracts, dependencies and non-responsibilities.
-6. Keep the full AGPL-3.0 licence in `LICENSE` and the
+6. Keep the full AGPL-3.0 license in `LICENSE` and the
    `PackageLicenseExpression` in `Directory.Build.props`.
 7. Add verification that proves the repository's accepted responsibility and
    contracts.
@@ -54,7 +54,7 @@ boundary cannot quietly acquire it.
 Two rules the header states and the compiler will not enforce:
 
 - **Nothing throws across the boundary.** A managed exception unwinding into C
-  is undefined behaviour, exactly as a Rust panic is. Every
+  is undefined behavior, exactly as a Rust panic is. Every
   `[UnmanagedCallersOnly]` callback catches its own.
 - **Borrowed means borrowed.** An `XmipStr` is valid for the duration of the
   call that produced it. Copy out of it; never hold the pointer.
