@@ -16,16 +16,34 @@ template changes do not automatically rewrite generated repositories.
 
 ## The one dependency rule
 
-**A .NET repository references `include/xmip_module.h` and no Xmip Rust crate.**
+**A .NET repository references `Xmip.Abi` and `Xmip.Surface` by project path,
+and no Xmip Rust crate.**
 
-ADR-0012 clause 2 makes the header normative and the language bindings a
-convenience. A surface that linked Xmip's Rust would prove the boundary does not
-work. That a generated project compiles without a single Xmip source file is the
-test, and it is worth keeping true.
+The binding over the normative C header exists once, `dotnet/Xmip.Abi` in
+[xmip-core-abi](https://github.com/IlleNilsson/xmip-core-abi) (ADR-0014,
+amendment of 2026-09-09), and what every .NET surface builds on it — the
+operator surface, the scope tree, runtime discovery, the English, the TOML
+reader — is `dotnet/Xmip.Surface` beside it (ADR-0052). A surface is a thin
+face over those two. It declares no struct of the header's own, loads no
+library itself and turns on no `unsafe`; a surface that did would be a second
+binding, which is the drift a shared one exists to prevent.
+
+The reference is a project path inside the composed estate, four levels up
+from a project at `module/operation/<leaf>/src/`:
+
+```xml
+<ItemGroup>
+  <ProjectReference Include="..\..\..\..\foundation\abi\dotnet\Xmip.Abi\Xmip.Abi.csproj" />
+  <ProjectReference Include="..\..\..\..\foundation\abi\dotnet\Xmip.Surface\Xmip.Surface.csproj" />
+</ItemGroup>
+```
+
+So a surface repository builds inside the estate, where `xgit` builds it; that
+is the one place "each repository builds on its own" does not hold, and
+ADR-0014 records it rather than leaving it to be discovered.
 
 [xmip-core-cli](https://github.com/IlleNilsson/xmip-core-cli) is the worked
-example: `NativeLibrary.Load`, `xmip_create_module_v1`, the descriptor read back
-and the instance destroyed, linking nothing.
+example: argument parsing and rendering over `Xmip.Surface`, linking nothing.
 
 ## Before implementation
 

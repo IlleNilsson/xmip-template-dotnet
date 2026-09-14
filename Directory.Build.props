@@ -44,15 +44,12 @@
   </PropertyGroup>
 
   <!--
-    unsafe is off by default and turned on per project.
-
-    The Rust template forbids it outright. Here it cannot be forbidden: a
-    surface that crosses the C ABI in include/xmip_module.h needs function
-    pointers and raw structs, and that is the whole reason the project exists.
-    A project that does not cross the boundary should leave this alone.
+    No unsafe switch. A .NET repository never crosses the C ABI itself: the
+    binding exists once, in Xmip.Abi in xmip-core-abi (ADR-0014, amendment of
+    2026-09-09), and a surface references it and Xmip.Surface by project path
+    (ADR-0052). The compiler's default — unsafe off — is the rule, and a
+    project that finds itself wanting the switch is doing the binding's work
+    over again.
   -->
-  <PropertyGroup>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-  </PropertyGroup>
 
 </Project>

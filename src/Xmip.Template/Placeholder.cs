@@ -7,13 +7,14 @@ namespace Xmip.Template;
 /// Replace this file only after the repository responsibility, public contracts
 /// and dependency direction are accepted in the Xmip architecture.
 ///
-/// Whatever replaces it reaches Xmip through <c>include/xmip_module.h</c> in
-/// xmip-core-abi, and through nothing else. ADR-0012 clause 2 makes the header
-/// normative; a .NET surface that linked Xmip's Rust would be evidence that the
-/// boundary does not work.
+/// Whatever replaces it reaches Xmip through <c>Xmip.Abi</c> and
+/// <c>Xmip.Surface</c> in xmip-core-abi, referenced by project path inside
+/// the composed estate, and through nothing else. The binding over the C
+/// header exists once (ADR-0014, amendment of 2026-09-09) and every .NET
+/// surface is a thin face over the shared model (ADR-0052); a surface that
+/// crossed the boundary itself, or linked Xmip's Rust, would be evidence
+/// that the boundary does not work.
 /// </remarks>
 public static class Placeholder
 {
-    /// <summary>The module boundary version this repository is built against.</summary>
-    public const uint AbiVersion = 1u;
 }

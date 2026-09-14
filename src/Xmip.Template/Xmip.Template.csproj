@@ -12,10 +12,17 @@
   </PropertyGroup>
 
   <!--
-    Uncomment when this project crosses the C ABI in xmip-core-abi.
-    <PropertyGroup>
-      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    </PropertyGroup>
+    How a surface reaches Xmip: the one binding and the shared model in
+    xmip-core-abi, referenced by project path inside the composed estate
+    (ADR-0014, amendment of 2026-09-09; ADR-0052). The path is the estate's
+    layout — four levels up from a project at module/operation/<leaf>/src/.
+    Uncomment when the repository is mounted there; a standalone clone of the
+    template builds without them.
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\foundation\abi\dotnet\Xmip.Abi\Xmip.Abi.csproj" />
+      <ProjectReference Include="..\..\..\..\foundation\abi\dotnet\Xmip.Surface\Xmip.Surface.csproj" />
+    </ItemGroup>
   -->
 
 </Project>
