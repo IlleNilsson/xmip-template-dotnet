@@ -28,13 +28,13 @@ face over those two. It declares no struct of the header's own, loads no
 library itself and turns on no `unsafe`; a surface that did would be a second
 binding, which is the drift a shared one exists to prevent.
 
-The reference is a project path inside the composed estate, four levels up
-from a project at `module/operation/<leaf>/src/`:
+The reference is a project path inside the composed estate, five levels up
+from a project at `module/<provider>/operation/<leaf>/src/<project>/`:
 
 ```xml
 <ItemGroup>
-  <ProjectReference Include="..\..\..\..\foundation\abi\dotnet\Xmip.Abi\Xmip.Abi.csproj" />
-  <ProjectReference Include="..\..\..\..\foundation\abi\dotnet\Xmip.Surface\Xmip.Surface.csproj" />
+  <ProjectReference Include="..\..\..\..\..\foundation\abi\dotnet\Xmip.Abi\Xmip.Abi.csproj" />
+  <ProjectReference Include="..\..\..\..\..\foundation\abi\dotnet\Xmip.Surface\Xmip.Surface.csproj" />
 </ItemGroup>
 ```
 

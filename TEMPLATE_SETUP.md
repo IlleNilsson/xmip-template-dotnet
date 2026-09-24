@@ -41,7 +41,7 @@ project path inside the composed estate, and through nothing else. No
 `PackageReference` to an Xmip package, no binding of the header's own, no
 `unsafe`, and no Rust. The `.csproj` carries the two references commented
 out; uncomment them once the repository is mounted at
-`module/operation/<leaf>` (ADR-0014, amendment of 2026-09-09; ADR-0052).
+`module/<provider>/operation/<leaf>` (ADR-0014, amendment of 2026-09-09; ADR-0052).
 
 What a surface then does is the PowerShell shape, the command shape or the
 screen: it reads `IOperatorSurface`, says things through `English`, and
