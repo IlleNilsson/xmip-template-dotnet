@@ -59,7 +59,11 @@ number. Do not change it here — raising it is one deliberate change across eve
 repository.
 
 `Directory.Build.props` holds the target framework, nullability, analysis level
-and warnings-as-errors. A project sets only what is specific to itself.
+— `preview-all`, every analyzer rule at the preview level — and
+warnings-as-errors. `.editorconfig` turns three style rules off, each with its
+reason: IDE0058 (a discarded result is the intent), IDE0022 and IDE0061 (methods
+and local functions are block-bodied). A project sets only what is specific to
+itself.
 
 ## Shared governance
 
