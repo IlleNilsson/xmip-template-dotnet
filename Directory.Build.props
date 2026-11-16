@@ -39,12 +39,13 @@
   </PropertyGroup>
 
   <!--
-    No unsafe switch. A .NET repository never crosses the C ABI itself: the
-    binding exists once, in Xmip.Abi in xmip-core-abi (ADR-0014, amendment of
-    2026-09-09), and a surface references it and Xmip.Surface by project path
-    (ADR-0052). The compiler's default — unsafe off — is the rule, and a
-    project that finds itself wanting the switch is doing the binding's work
-    over again.
+    No unsafe switch. A surface repository never crosses the C ABI itself:
+    the binding exists once, in Xmip.Abi in xmip-core-abi (ADR-0014,
+    amendment of 2026-09-09), the calls through it once, in Xmip.Operate in
+    xmip-core-operate, and a surface references Xmip.Abi and Xmip.Surface by
+    project path (ADR-0052, amendment 2026-11-16). The compiler's default —
+    unsafe off — is the rule, and a project that finds itself wanting the
+    switch is doing that work over again.
   -->
 
 </Project>

@@ -22,11 +22,14 @@ and no Xmip Rust crate.**
 The binding over the normative C header exists once, `dotnet/Xmip.Abi` in
 [xmip-core-abi](https://github.com/IlleNilsson/xmip-core-abi) (ADR-0014,
 amendment of 2026-09-09), and what every .NET surface builds on it — the
-operator surface, the scope tree, runtime discovery, the English, the TOML
-reader — is `dotnet/Xmip.Surface` beside it (ADR-0052). A surface is a thin
-face over those two. It declares no struct of the header's own, loads no
-library itself and turns on no `unsafe`; a surface that did would be a second
-binding, which is the drift a shared one exists to prevent.
+Operate model that calls the runtime, the operator surface, the scope tree,
+runtime discovery, the English, the TOML reader — is `dotnet/Xmip.Operate`
+and `dotnet/Xmip.Surface` in
+[xmip-core-operate](https://github.com/IlleNilsson/xmip-core-operate)
+(ADR-0052, amendment 2026-11-16). A surface is a thin face over those. It
+declares no struct of the header's own, loads no library itself and turns on
+no `unsafe`; a surface that did would be a second binding, which is the drift
+a shared one exists to prevent.
 
 The reference is a project path inside the composed estate, five levels up
 from a project at `module/<provider>/operation/<leaf>/src/<project>/`:
@@ -34,7 +37,7 @@ from a project at `module/<provider>/operation/<leaf>/src/<project>/`:
 ```xml
 <ItemGroup>
   <ProjectReference Include="..\..\..\..\..\foundation\abi\dotnet\Xmip.Abi\Xmip.Abi.csproj" />
-  <ProjectReference Include="..\..\..\..\..\foundation\abi\dotnet\Xmip.Surface\Xmip.Surface.csproj" />
+  <ProjectReference Include="..\..\..\..\..\core\operation\operate\dotnet\Xmip.Surface\Xmip.Surface.csproj" />
 </ItemGroup>
 ```
 
