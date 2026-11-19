@@ -3,9 +3,10 @@
 This repository is the starter snapshot for a .NET 11 Xmip repository. It is not
 an Xmip runtime capability.
 
-Use it for anything a person touches: the command line, the PowerShell module,
-the MAUI desktop GUI, the Blazor web GUI. ADR-0014: every user-interfacing
-module is .NET 11, and `xmip-core-abi` is the exception.
+Use it for a .NET surface a person touches: the PowerShell module, the MAUI
+desktop GUI, the Blazor web GUI. ADR-0014: those are .NET 11 over the C ABI;
+the command line is Rust, on the runtime's traits (amendments 2026-10-12 and
+2026-11-17), and starts from the Rust template.
 
 For a Rust module — a capability, a foundation type, a transport — use
 [xmip-template-rust](https://github.com/IlleNilsson/xmip-template-rust)
@@ -45,8 +46,8 @@ So a surface repository builds inside the estate, where `xgit` builds it; that
 is the one place "each repository builds on its own" does not hold, and
 ADR-0014 records it rather than leaving it to be discovered.
 
-[xmip-core-cli](https://github.com/IlleNilsson/xmip-core-cli) is the worked
-example: argument parsing and rendering over `Xmip.Surface`, linking nothing.
+[xmip-core-gui](https://github.com/IlleNilsson/xmip-core-gui) is the worked
+example: components and pages over `Xmip.Surface`, linking nothing.
 
 ## Before implementation
 
